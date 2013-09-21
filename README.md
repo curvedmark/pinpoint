@@ -42,3 +42,4 @@ var str = pinpoint(code, options);
 	* `column` - the column number to point to, 1-based.
 	* `showLines` - the number of lines to show. The pointed line will try to stay in the middle of the displays lines.
 	* `indent` - indent string prepend to each line, before the line number.
+	* `tabSize` - width of a tab character.

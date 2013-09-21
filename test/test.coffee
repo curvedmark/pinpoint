@@ -130,3 +130,32 @@ test "indent", ->
 		**2| b
 		**---^
 	'''
+
+test "tab", ->
+	assert.generates {
+		line: 2,
+		column: 2,
+		tabSize: 2
+	}, '''
+		a
+			b
+	''', '''
+		1| a
+		2|   b
+		-----^
+	'''
+
+
+test "in character tab", ->
+	assert.generates {
+		line: 2,
+		column: 4,
+		tabSize: 2
+	}, '''
+		a
+			b	c	d
+	''', '''
+		1| a
+		2|   b  c  d
+		--------^
+	'''
